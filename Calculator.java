@@ -40,51 +40,37 @@ public class Calculator {
     }
 
     public void calculate() {
-        isError = false;
+        isError = false; // Reset error flag
         switch (operator) {
             case '+':
-                result = op1 + op2;
+                result = op1 + op2; // Addition
                 break;
             case '-':
-                result = op1 - op2;
+                result = op1 - op2; // Subtraction
                 break;
             case '*':
-                result = op1 * op2;
-                break;
-            case '%':
-                result = op1 * 0.01;
-                break;
-            case '√':
-                if (op1 < 0) {
-                    isError = true;
-                    result = 0;
-                } else {
-                    result = Math.sqrt(op1);
-                }
-                break;
-            case '±':
-                result = -op1;
+                result = op1 * op2; // Multiplication
                 break;
             case '/':
                 if (op2 == 0) {
-                    isError = true;
+                    isError = true; // Handle division by zero
                     result = 0;
                 } else {
-                    result = op1 / op2;
+                    result = op1 / op2; // Division
                 }
                 break;
             default:
-                isError = true;
+                isError = true; // Invalid operator
                 result = 0;
                 break;
         }
     }
 
     public void reset() {
-        op1 = 0;
-        op2 = 0;
-        operator = '\0';
-        result = 0;
-        isError = false;
+        op1 = 0; // Reset operand 1
+        op2 = 0; // Reset operand 2
+        operator = '\0'; // Reset operator
+        result = 0; // Reset result
+        isError = false; // Reset error flag
     }
 }
